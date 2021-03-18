@@ -1,0 +1,128 @@
+.footer {
+    padding: 6rem 0;
+    background-color: $light;
+    background-image: url(../images/bg-pattern-footer-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    @media (min-width: $breakpoint)
+    {
+        background-image: url(../images/bg-pattern-footer-desktop.svg);
+    }
+
+  &__container {}
+
+  &__head {
+    padding: 3rem 0;
+    border-bottom: 1px solid #cdcdcd;
+
+    @media (min-width: $breakpoint)
+    {
+      padding: 2.4rem 0 3.2rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+  }
+
+  &__logo {
+    margin-bottom: 2.5rem;
+    @media (min-width: $breakpoint)
+    {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      &__link {
+          &:not(:last-child) {
+              margin-right: 1.4rem;
+          }
+
+          &:hover,
+          &:focus {
+            transform: scale(1.2)
+            
+          }
+      }
+
+
+  }
+
+  &__body {
+      padding-top: 4rem;
+      @media (min-width: $breakpoint)
+      {
+          display: flex;
+      }
+      
+  }
+
+  &__col {
+      @media (min-width: $breakpoint)
+      {
+          width: 25%;
+      }
+  }
+
+  &__heading {
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-family: $font-family-primary;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $secondary;
+  }
+
+  &__menu {
+    margin-bottom: 4rem;  
+    list-style: none;
+
+  }
+
+  &__item {
+    margin-bottom: 1.2rem;
+  }
+
+  &__link {
+      color: $dark;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:link {
+        text-decoration: none;
+      }
+
+      &:hover,
+      &:focus {
+          text-decoration: underline;
+      }
+  }
+
+  &__copyright {
+      padding-top: 3rem;
+      .attribution {
+          max-width: 22rem;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 1.4rem;
+          line-height: 1.6;
+          color: $secondary;
+
+          a {
+              color: $dark;
+
+              &:hover,
+              &:focus {
+                  text-decoration: underline;
+              }
+          }
+      }
+  }
+}

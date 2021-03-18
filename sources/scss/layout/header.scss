@@ -1,0 +1,113 @@
+.header {
+    position: relative;
+    z-index: 9;
+    background-color: $light;
+    
+    &__container {
+        height: 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+
+    }
+
+    &__button {
+        @media (min-width: $breakpoint) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        width: 100vw;
+        height: 0;
+        padding-top: 4.8rem;
+        z-index: 99;
+        opacity: 0;
+
+        &--active {
+            opacity: 1;
+            height: calc(100vh - 8rem);
+            background: url(../images/bg-pattern-mobile-nav.svg) $dark;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom;
+        }
+
+        // desktop menu
+        @media (min-width: $breakpoint) {
+            position: initial;
+            top: initial;
+            left: initial;
+            width: initial;
+            height: initial;
+            padding-top: 0;
+            background-color: transparent;
+            opacity: 1;
+        }
+
+        &__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @media (min-width: $breakpoint) {
+                flex-direction: row;
+            }
+        }
+
+        &__item {
+            margin-bottom: 4rem;
+            @media (min-width: $breakpoint) {
+                &:not(:last-child) {
+                    margin-right: 2.4rem;
+                }
+                margin-bottom: 0;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: $light;
+
+            @media (min-width: $breakpoint) {
+                font-size: 1.6rem;
+                letter-spacing: initial;
+                color: $secondary;
+            }
+            
+            &:hover,
+            &:focus,
+            &:active {
+                transform: scale(1.2);
+
+                @media (min-width: $breakpoint) {
+                    color: $dark;
+                    transform: initial;
+                    
+                }
+            }
+            
+        }
+    }
+
+    &__btn {
+        @media (max-width: 799px) {
+            padding: 1.6rem 6.4rem;
+            font-size: 2rem;
+            font-weight: $font-weight-normal;
+            color: $light;
+            border-color: $light;
+        }
+    }
+}
